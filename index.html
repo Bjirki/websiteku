@@ -1,0 +1,303 @@
+<!doctype html>
+
+<html lang="id">
+<head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aditya mulyadi personal website</title>
+  <meta name="description" content="profil aditya mulyad" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+  
+  :root{
+  --bg-1: #0b0f1a;
+  --bg-2: #061126;
+  --glass: rgba(255,255,255,0.04);
+  --accent: #6ef0ff;
+  --accent-2: #9b7bff;
+  --muted: rgba(255,255,255,0.6);
+  --card-gradient: linear-gradient(135deg, rgba(110,240,255,0.12), rgba(155,123,255,0.08));
+  --glass-border: rgba(110,240,255,0.12);
+  --max-width: 1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(155,123,255,0.07), transparent),
+              radial-gradient(1000px 400px at 90% 80%, rgba(110,240,255,0.04), transparent),
+              linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color:#eaf6ff; 
+  -webkit-font-smoothing:antialiased; 
+  -moz-osx-font-smoothing:grayscale;
+  padding:16px; 
+  display:flex; 
+  align-items:flex-start; 
+  justify-content:center;
+  gap:24px;
+}
+.wrap{width:100%;max-width:var(--max-width)}
+
+/* HEADER */
+header{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;
+  flex-wrap:wrap;gap:12px;
+}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{
+  width:56px;height:56px;border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#0a1020;
+  box-shadow:0 6px 30px rgba(13,20,37,0.6);
+}
+.brand h1{font-size:18px;margin:0}
+.brand p{margin:0;font-size:12px;color:var(--muted)}
+
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.search{background:var(--glass);border:1px solid rgba(255,255,255,0.03);
+  padding:10px 12px;border-radius:10px;display:flex;gap:8px;align-items:center}
+.search input{background:transparent;border:0;color:inherit;outline:none;width:160px}
+.btn{background:transparent;border:1px solid var(--glass-border);
+  padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:600}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:320px 1fr;gap:20px}
+
+/* Sidebar */
+.sidebar{backdrop-filter:blur(8px);
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+.profile{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.avatar{width:60px;height:60px;border-radius:12px;
+  background:linear-gradient(135deg,#fff2, #fff1);
+  display:flex;align-items:center;justify-content:center;font-weight:700;color:#000}
+.meta h3{margin:0;font-size:14px}
+.meta p{margin:0;font-size:12px;color:var(--muted)}
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{padding:6px 10px;border-radius:999px;font-size:12px;
+  border:1px solid rgba(255,255,255,0.03);background:var(--glass)}
+
+/* Main */
+main{min-height:60vh}
+.hero{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  gap:12px;padding:20px;border-radius:14px;
+  background:linear-gradient(135deg, rgba(155,123,255,0.06), rgba(110,240,255,0.03));
+  border:1px solid rgba(255,255,255,0.02);margin-bottom:18px}
+.hero-left h2{margin:0;font-size:20px}
+.hero-left p{margin:6px 0 0;color:var(--muted)}
+.hero-right{display:flex;gap:10px;align-items:center}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:18px
+}
+.card{border-radius:12px;padding:12px;background:var(--card-gradient);
+  border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px);
+  transition:transform .25s ease, box-shadow .25s ease}
+.card:hover{transform:translateY(-8px);box-shadow:0 14px 40px rgba(7,10,20,0.6)}
+
+.cover{
+  border-radius:8px;overflow:hidden;display:flex;align-items:flex-end;padding:12px;
+  color:#02102a;aspect-ratio:3/4; /* bikin cover proporsional */
+  background-size:cover;background-position:center;
+}
+.cover .title{font-weight:700;margin:0}
+.cover .meta{font-size:12px;color:rgba(2,16,42,0.7)}
+.card .info{padding-top:10px;display:flex;align-items:center;justify-content:space-between}
+.read-btn{padding:8px 10px;border-radius:8px;border:0;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  cursor:pointer;color:#02102a;font-weight:700}
+
+/* Modal reader */
+.reader-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:28px}
+.reader-modal.open{display:flex}
+.reader{width:min(1000px,96%);height:80vh;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.03);
+  display:grid;grid-template-columns:320px 1fr;gap:18px}
+.reader .toc{border-right:1px dashed rgba(255,255,255,0.03);padding-right:12px}
+.reader .toc h4{margin:0 0 12px 0}
+.page{background:linear-gradient(180deg,#03102a, #03142f);
+  padding:18px;border-radius:10px;height:100%;overflow:auto;color:#dff6ff}
+.page h3{margin-top:0}
+
+/* Responsive tweaks */
+@media(max-width:920px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{order:2}
+  .reader{grid-template-columns:1fr}
+  .hero-right{display:none}
+}
+@media(max-width:600px){
+  body{font-size:14px}
+  .cover{aspect-ratio:2/3}
+  .search input{width:120px}
+}
+
+.neon{box-shadow:0 4px 28px rgba(110,240,255,0.06), inset 0 -6px 40px rgba(155,123,255,0.02)}
+
+footer{margin-top:18px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">AD</div>
+        <div>
+          <h1>ADITYA MULYADI PERSONAL WEB</h1>
+          <p>randommm beljm tau untuk apa </p>
+        </div>
+      </div><div class="controls">
+    <div class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <input id="search" placeholder="Cari judul, penulis, tag..." />
+    </div>
+    <button id="theme" class="btn">Theme</button>
+    <button class="btn" id="upload">+ Upload</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="profile">
+      <div class="avatar">AD</div>
+      <div class="meta"><h3>ADITYA MULYADI</h3><p>owner website</p></div>
+    </div>
+    <div class="tag-list">
+      <div class="tag">Pelajar smk nu miftahul falah</div>
+      <div class="tag">Designer</div>
+      <div class="tag">web development</div>
+      <div class="tag">reading</div>
+    </div>
+
+    <div style="margin-top:18px">
+      <h4 style="margin:0 0 8px 0"></h4>
+      <div style="display:flex;gap:10px;flex-direction:column">
+        <div style="font-size:13px;color:var(--muted)"> </div>
+        <div style="font-size:13px;color:var(--muted)"></div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero neon">
+      <div class="hero-left">
+        <h2>Selamat datang in Personal Website</h2>
+        <p>sebenernya buat ini karena gabut gatau ngapain.</p>
+      </div>
+      <div class="hero-right">
+        <button class="btn">Discover</button>
+        <button class="btn">Collections</button>
+      </div>
+    </section>
+
+    <section>
+      <h3 style="margin:0 0 12px 0">Terbaru</h3>
+      <div id="grid" class="grid">
+        <!-- cards injected by JS -->
+      </div>
+    </section>
+
+    <footer>© identn_1— website •  <code></code></footer>
+  </main>
+</div>
+
+  </div>  <!-- Reader modal -->  <div id="readerModal" class="reader-modal" aria-hidden="true">
+    <div class="reader">
+      <div class="toc">
+        <h4>Daftar Isi</h4>
+        <ol id="tocList"></ol>
+      </div>
+      <div class="page">
+        <button id="closeReader" class="btn" style="float:right;margin-bottom:8px">Tutup</button>
+        <h3 id="pageTitle">Judul Buku</h3>
+        <p id="pageContent">Muat konten buku di sini. Ini adalah demo teks untuk menunjukkan tata letak pembaca yang bersih, mudah dibaca, dan futuristik. Kamu bisa mengganti konten ini dengan file EPUB atau teks biasa di JS.</p>
+      </div>
+    </div>
+  </div>  
+  <script>
+  /* Simple demo data */
+  const books = [
+    {
+      id:1,
+      title:'',
+      author:'A.D',
+      desc:'foto saat spin mll',
+      image:'foto5.jpg' // akan tampil foto
+    },
+    {
+      id:1,
+      title:'',
+      author:'A.D',
+      desc:'foto saat di mts miffa',
+      image:'foto2.jpg' // akan tampil foto
+    },
+    {
+      id:1,
+      title:'',
+      author:'A.D',
+      desc:'randommm',
+      image:'foto4.jpg' // akan tampil foto
+    },
+    {
+      id:1,
+      title:'',
+      author:'A.D',
+      desc:'randomm',
+      image:'foto3.jpg' // akan tampil foto
+    }
+  ];
+
+  const grid = document.getElementById('grid');
+
+  function renderBooks(list){
+    grid.innerHTML='';
+    list.forEach(b=>{
+      const card = document.createElement('div');card.className='card';
+
+      const cover = document.createElement('div');cover.className='cover';
+      if (b.image) {
+        cover.style.background = `url('${b.image}') center/cover no-repeat`;
+      } else if (b.color) {
+        cover.style.background = `linear-gradient(180deg, ${b.color[0]}, ${b.color[1]})`;
+      } else {
+        cover.style.background = `#ccc`; // kalau gak ada keduanya
+      }
+
+      cover.innerHTML = `
+        <div style='display:flex;flex-direction:column;gap:6px'>
+          <div class='title'>${b.title}</div>
+          <div class='meta'>${b.author}</div>
+        </div>
+      `;
+
+      const info = document.createElement('div');info.className='info';
+      const btn = document.createElement('button');btn.className='read-btn';btn.textContent='1';
+      btn.onclick = ()=>openReader(b);
+
+      info.innerHTML = `<div style='font-size:12px;color:var(--muted)'>${b.desc}</div>`;
+      info.appendChild(btn);
+
+      card.appendChild(cover);
+      card.appendChild(info);
+      grid.appendChild(card);
+    })
+  }
+  renderBooks(books);
+</script>
+  
+    <script>
+    document.getElementById("waktu").innerText = new Date().toLocaleTimeString();
+  </script>
+  </body>
+  
+
+</html>
